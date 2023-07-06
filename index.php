@@ -21,7 +21,10 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
     if ( isset($_GET['pswLenght'])){
 
     }
-    
+    session_start();
+    $_SESSION['password'] = getRandomPassword($_GET['pswLenght']);
+
+    header('Location: ./succecs.php');
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -59,9 +62,7 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
                 </div>
                 <div class="col-12 text-center">
                     <?php
-                        session_start();
-                        $_SESSION['password'] = getRandomPassword($_GET['pswLenght']);
-                        var_dump (getRandomPassword($_GET['pswLenght']));
+                        
                     ?>
                 </div>
             </div>
