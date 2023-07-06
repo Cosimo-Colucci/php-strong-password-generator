@@ -1,4 +1,4 @@
-<!-- Esercizio di oggi: :php: PHP Strong Password Generator :chiave:
+Esercizio di oggi: :php: PHP Strong Password Generator :chiave:
 Descrizione
 Dobbiamo creare una pagina che permetta ai nostri utenti di utilizzare il nostro generatore di password (abbastanza) sicure. L’esercizio è suddiviso in varie milestone ed è molto importante svilupparle in modo ordinato.
 
@@ -14,7 +14,7 @@ BONUS 1 : Milestone 3
 Invece di visualizzare la password nella index, effettuare un redirect ad una pagina dedicata che tramite $_SESSION recupererà la password da mostrare all’utente.
 
 BONUS 2: Milestone 4
-Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme). Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali. -->
+Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme). Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.
 <?php
     if ( isset($_GET['pswLenght'])){
 
@@ -25,7 +25,7 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
         $symbols = '!£$%&/@#*<>-_()[]{}:;"';
 
         $actualCharaters = strtoupper($caracters). $caracters. $numbers. $symbols;
-
+        return $actualCharaters;
         $newPassword = '';
     }
     echo getRandomPassword(1);
