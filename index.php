@@ -19,12 +19,14 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
     include_once __DIR__ . '/utilities/functions.php';
 
     if ( isset($_GET['pswLenght'])){
+        session_start();
 
+        $_SESSION['password'] = getRandomPassword($_GET['pswLenght']);
+
+        header('Location: ./succecs.php');
     }
-    session_start();
-    $_SESSION['password'] = getRandomPassword($_GET['pswLenght']);
 
-    header('Location: ./succecs.php');
+
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -57,13 +59,8 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
                     </form>
                 </div>
                 <div class="col-12 text-center">
-                    <button class='btn btn-primary' type="submit">Invia</button>
-                    <button class='btn btn-secondary' type="submit">Reset</button>
-                </div>
-                <div class="col-12 text-center">
-                    <?php
-                        
-                    ?>
+                    <button type="submit" class='btn btn-primary'>Invia</button>
+                    <button type="submit" class='btn btn-secondary'>Reset</button>
                 </div>
             </div>
         </div>
