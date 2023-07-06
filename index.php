@@ -16,30 +16,12 @@ Invece di visualizzare la password nella index, effettuare un redirect ad una pa
 BONUS 2: Milestone 4
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme). Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali. -->
 <?php
+    include_once __DIR__ . '/utilities/functions.php';
+
     if ( isset($_GET['pswLenght'])){
 
     }
-    function getRandomPassword ($passwordLenght){
-        $caracters = 'qwertyuiopasdfghjklzxcvbnm';
-        $numbers = '1234567890';
-        $symbols = '!£$%&/@#*<>-_()[]{}:;"';
-        
-        $actualCharaters = strtoupper($caracters). $caracters. $numbers. $symbols;
-        $newPassword = '';
-        if($passwordLenght >= 6 && $passwordLenght <= 30 ){
 
-            while(strlen($newPassword)< $passwordLenght){
-                $randomIndex = rand(0, strlen($actualCharaters) - 1);
-                $newPassword .= $actualCharaters[$randomIndex];
-            }
-            return $newPassword;
-        } else {
-            return false;
-        }
-
-
-        return $actualCharaters;
-    }
     // var_dump (getRandomPassword($_GET['pswLenght']));
 ?>
 <!DOCTYPE html>
@@ -78,6 +60,8 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
                 </div>
                 <div class="col-12 text-center">
                     <?php
+                        session_start();
+                        $_SESSION['password'] = getRandomPassword($_GET['pswLenght']);
                         var_dump (getRandomPassword($_GET['pswLenght']));
                     ?>
                 </div>
