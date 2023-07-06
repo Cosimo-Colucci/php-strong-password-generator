@@ -78,7 +78,7 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
                 </div>
                 <div class="col-12 text-center">
                     <?php
-                        echo getRandomPassword($_GET['pswLenght']);
+                        var_dump (getRandomPassword($_GET['pswLenght']));
                     ?>
                 </div>
             </div>
