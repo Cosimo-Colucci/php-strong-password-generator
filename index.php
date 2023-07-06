@@ -21,8 +21,7 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
     if ( isset($_GET['pswLenght'])){
 
     }
-
-    // var_dump (getRandomPassword($_GET['pswLenght']));
+    
 ?>
 <!DOCTYPE html>
     <html lang="en">
